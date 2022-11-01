@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+.winnerCell {
+}
+.dashboard.MuiGrid-container {
+  justify-content: center;
+  padding-top: 15px;
+}
+.legend {
+  h2 {
+    text-align: center;
+    font-size: 1.3em;
+    text-decoration: underline;
+  }
+  .MuiGrid-item {
+    &.participantRow {
+      & > div {
+        width: 20px;
+        height: 10px;
+        display: inline-flex;
+      }
+      & > span {
+        margin-left: 10px;
+      }
+    }
+  }
+  .MuiPaper-root {
+    padding: 10px;
+  }
+}
+
+svg {
+  width: 500px;
+  height: 500px;
+}
+.spin {
+  rotate: 3060deg;
+  transition: 3s;
+}
+.arrow {
+  height: 50px;
+  width: 500px;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(3060deg);
+  }
+}

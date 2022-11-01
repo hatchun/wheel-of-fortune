@@ -1,7 +1,7 @@
 {
-  "name": "weel-of-fortune",
+  "name": "wheel-of-fortune",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/weel-of-fortune/src",
+  "sourceRoot": "apps/wheel-of-fortune/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,17 +10,17 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/weel-of-fortune",
-        "index": "apps/weel-of-fortune/src/index.html",
+        "outputPath": "dist/apps/wheel-of-fortune",
+        "index": "apps/wheel-of-fortune/src/index.html",
         "baseHref": "/",
-        "main": "apps/weel-of-fortune/src/main.tsx",
-        "polyfills": "apps/weel-of-fortune/src/polyfills.ts",
-        "tsConfig": "apps/weel-of-fortune/tsconfig.app.json",
+        "main": "apps/wheel-of-fortune/src/main.tsx",
+        "polyfills": "apps/wheel-of-fortune/src/polyfills.ts",
+        "tsConfig": "apps/wheel-of-fortune/tsconfig.app.json",
         "assets": [
-          "apps/weel-of-fortune/src/favicon.ico",
-          "apps/weel-of-fortune/src/assets"
+          "apps/wheel-of-fortune/src/favicon.ico",
+          "apps/wheel-of-fortune/src/assets"
         ],
-        "styles": ["apps/weel-of-fortune/src/styles.scss"],
+        "styles": ["apps/wheel-of-fortune/src/styles.scss"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -34,8 +34,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/weel-of-fortune/src/environments/environment.ts",
-              "with": "apps/weel-of-fortune/src/environments/environment.prod.ts"
+              "replace": "apps/wheel-of-fortune/src/environments/environment.ts",
+              "with": "apps/wheel-of-fortune/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -51,15 +51,15 @@
       "executor": "@nrwl/webpack:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "weel-of-fortune:build",
+        "buildTarget": "wheel-of-fortune:build",
         "hmr": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "weel-of-fortune:build:development"
+          "buildTarget": "wheel-of-fortune:build:development"
         },
         "production": {
-          "buildTarget": "weel-of-fortune:build:production",
+          "buildTarget": "wheel-of-fortune:build:production",
           "hmr": false
         }
       }
@@ -68,14 +68,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/weel-of-fortune/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/wheel-of-fortune/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/weel-of-fortune/jest.config.ts",
+        "jestConfig": "apps/wheel-of-fortune/jest.config.ts",
         "passWithNoTests": true
       }
     }

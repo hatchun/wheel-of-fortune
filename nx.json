@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "weel-of-forturne",
+  "npmScope": "wheel-of-forturne",
   "affected": {
     "defaultBase": "master"
   },
@@ -80,5 +80,5 @@
       }
     }
   },
-  "defaultProject": "weel-of-fortune"
+  "defaultProject": "wheel-of-fortune"
 }
