@@ -23,7 +23,7 @@ export function ChartLegend({
                   <Grid item className="participantRow">
                     <div
                       style={{
-                        backgroundColor: p.bgColor,
+                        backgroundColor: p.colorIdentifier,
                       }}
                     ></div>
                     <span>{p.name}</span>
@@ -43,7 +43,7 @@ export function ChartLegend({
               .filter((p) => p.position)
               .sort((a, b) => (a.position || 0) - (b.position || 0))
               .map((p) => (
-                <Grid item className="winnerCell">
+                <Grid item>
                   <span>{p.position}: </span>
                   <span>{p.name}</span>
                 </Grid>

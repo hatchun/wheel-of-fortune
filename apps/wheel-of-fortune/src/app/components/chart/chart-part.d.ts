@@ -1,6 +1,6 @@
 export interface IChartPart {
   name: string,
-  bgColor: string;
+  colorIdentifier: string;
   percentage: number;
   offset: number;
 }
