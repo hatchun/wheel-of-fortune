@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { ChartPart } from './chart-part';
 import { IChartPart } from './chart-part.d';
-import { IParticipant } from '../IParticipant.d';
+import { IParticipant } from '../IParticipant';
 import { useDashboardContext } from '../../data/dashboard-context';
 
 function getRandomArbitrary(min: number, max: number) {
