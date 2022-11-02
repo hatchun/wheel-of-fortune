@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-.winnerCell {
+h1 {
+  text-align: center;
 }
 .dashboard.MuiGrid-container {
   justify-content: center;
@@ -45,4 +46,11 @@ svg {
   100% {
     transform: rotate(3060deg);
   }
+}
+
+#drop_zone {
+  display: flex;
+    border: 1px dashed lightgray;
+    height: 300px;
+    background-color: #fafafa;
 }

@@ -10,19 +10,19 @@ function getRandomArbitrary(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
 
-function mapToChartParts(
-  participations: IParticipant[]
-): IChartPart[] {
+function mapToChartParts(participations: IParticipant[]): IChartPart[] {
   const totalInterviews = participations.reduce(
-    (partialSum, participant) => partialSum + participant.interviewCount,
+    (partialSum, participant) =>
+      partialSum + Number(participant.participationWeight),
     0
   );
 
   return participations.reduce((res: IChartPart[], currentParticipant) => {
     res.push({
       percentage:
-        ((currentParticipant.interviewCount || 0) * 100) / totalInterviews,
-      bgColor: currentParticipant.bgColor,
+        ((Number(currentParticipant.participationWeight) || 0) * 100) /
+        totalInterviews,
+      colorIdentifier: currentParticipant.colorIdentifier,
       name: currentParticipant.name,
       offset:
         res.reduce(
@@ -35,14 +35,15 @@ function mapToChartParts(
   }, []);
 }
 export function Chart({
-  bgColor,
+  colorIdentifier,
   participants,
 }: {
-  bgColor: string;
+  colorIdentifier: string;
   participants: IParticipant[];
 }) {
-  const [ position, setPosition] = useState(1);
+  const [position, setPosition] = useState(1);
   const parts = mapToChartParts(participants.filter((p) => !p.position));
+  console.log(parts);
   const [spinParams, setSpinParams] = useState({} as any);
   const { state, setState } = useDashboardContext();
   const getRandomSpin = () => {
@@ -54,9 +55,14 @@ export function Chart({
       return deg >= start && deg < end;
     });
     setTimeout(() => {
-      setState(state.map((s) => ({ ...s, position: s.name === winner?.name ? position : s.position })));
+      setState(
+        state.map((s) => ({
+          ...s,
+          position: s.name === winner?.name ? position : s.position,
+        }))
+      );
       setPosition(position + 1);
-      setSpinParams({})
+      setSpinParams({});
     }, 3500);
     return `${degrees}deg`;
   };
@@ -77,7 +83,8 @@ export function Chart({
           width="20"
           viewBox="0 0 20 20"
         >
-          <circle r="10" cx="10" cy="10" fill={bgColor} />
+          <circle r="9.9" cx="10" cy="10" fill={colorIdentifier} />
+          <circle r="10" cx="10" cy="10" fill="black" />
           {parts?.map((p) => (
             <ChartPart key={p.name.trim()} {...p} />
           ))}
